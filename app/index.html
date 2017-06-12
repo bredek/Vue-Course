@@ -19,7 +19,9 @@
         <p> {{ counter }} </p>
         <button v-on:click="addCounter(5, $event)">Add counter</button>
         <h1>Coordinates</h1>
-        <p v-on:mousemove="updateCoordinates">Client x = {{ x }}, y = {{ x }}</p>
+        <p v-on:mousemove="updateCoordinates">Client x = {{ x }}, y = {{ x }} 
+            <span v-on:mousemove.stop="dummy"> Dead hover spot</span>
+        </p>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
@@ -47,7 +49,6 @@
                 updateCoordinates:function(e){
                     this.x = e.clientX;
                     this.y = e.clientY;
-
                 }
             }
         })
