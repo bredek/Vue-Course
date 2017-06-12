@@ -17,6 +17,7 @@
         <!-- enable raw html output -->
         <p v-html="htmlLink"></p>
         <p> {{ counter }} </p>
+        <!-- conditions inline -->
         <p> {{ counter > 10 ? "Greater than 10" : "Smaller than 10" }} </p>
         <button v-on:click="addCounter(5, $event)">Add counter</button>
         <!-- anopther aproach -->
@@ -27,12 +28,19 @@
             <span v-on:mousemove.stop="dummy"> Dead hover spot</span>
         </p>
         <input type="text" v-on:keyup.enter="alertMe">
+        <div>
+            <input type="text" class="two-way" v-model="bindMsg">
+        </div>
+        <p>{{bindMsg}}</p>
+
+
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
         new Vue({
             el: '#app',
             data: {
+                bindMsg: 'Jack',
                 x: 0,
                 y: 0,
                 counter: 0,
