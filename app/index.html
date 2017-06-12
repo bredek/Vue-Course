@@ -19,9 +19,10 @@
         <p> {{ counter }} </p>
         <button v-on:click="addCounter(5, $event)">Add counter</button>
         <h1>Coordinates</h1>
-        <p v-on:mousemove="updateCoordinates">Client x = {{ x }}, y = {{ x }} 
+        <p v-on:mousemove="updateCoordinates">Client x = {{ x }}, y = {{ x }}
             <span v-on:mousemove.stop="dummy"> Dead hover spot</span>
         </p>
+        <input type="text" v-on:keyup.enter="alertMe">
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
@@ -39,16 +40,19 @@
                 changeTitle: function (e) {
                     this.title = e.target.value;
                 },
-                sayHello:function(){
+                sayHello: function () {
                     this.title = "New Value";
                     return "Hello Vue.js!";
                 },
-                addCounter:function(step, e){
+                addCounter: function (step, e) {
                     this.counter += step;
                 },
-                updateCoordinates:function(e){
+                updateCoordinates: function (e) {
                     this.x = e.clientX;
                     this.y = e.clientY;
+                },
+                alertMe: function (e) {
+                    alert('Enter !');
                 }
             }
         })
