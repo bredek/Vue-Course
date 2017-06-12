@@ -17,7 +17,11 @@
         <!-- enable raw html output -->
         <p v-html="htmlLink"></p>
         <p> {{ counter }} </p>
+        <p> {{ counter > 10 ? "Greater than 10" : "Smaller than 10" }} </p>
         <button v-on:click="addCounter(5, $event)">Add counter</button>
+        <!-- anopther aproach -->
+        <button v-on:click="counter++">Add counter</button>
+        p
         <h1>Coordinates</h1>
         <p v-on:mousemove="updateCoordinates">Client x = {{ x }}, y = {{ x }}
             <span v-on:mousemove.stop="dummy"> Dead hover spot</span>
