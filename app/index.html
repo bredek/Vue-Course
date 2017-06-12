@@ -11,7 +11,8 @@
 <body>
     <div id="app">
         <input type="text" v-on:input="changeTitle">
-        <p>{{ title }}</p>
+        <!-- disable overriding by vonce directive-->
+        <p v-once>{{ title }}</p>
         <p> {{ sayHello() }} and here's link <a v-bind:href="link">link to Google</a></p>
     </div>
     <script src="https://unpkg.com/vue"></script>
@@ -19,7 +20,7 @@
         new Vue({
             el: '#app',
             data: {
-                title: "",
+                title: "This is a starter value",
                 link: "https://www.google.ru/"
             },
             methods: {
@@ -27,6 +28,7 @@
                     this.title = e.target.value;
                 },
                 sayHello:function(){
+                    this.title = "New Value";
                     return "Hello Vue.js!";
                 }
             }
