@@ -32,6 +32,12 @@
             <input type="text" class="two-way" v-model="bindMsg">
         </div>
         <p>{{bindMsg}}</p>
+        <div class="counter">
+            <button v-on:click="counter++">Increase</button>
+            <button v-on:click="counter--">Decrease</button>
+            <p>Counter: {{counter}}</p>
+            <p>Result: {{result()}}</p>
+        </div>
 
 
     </div>
@@ -65,6 +71,9 @@
                 },
                 alertMe: function (e) {
                     alert('Enter !');
+                },
+                result:function(){
+                    return this.counter > 5 ? "Greater than 5" : "Less than 5";
                 }
             }
         })
