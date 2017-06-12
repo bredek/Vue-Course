@@ -14,6 +14,8 @@
         <!-- disable overriding by vonce directive-->
         <p v-once>{{ title }}</p>
         <p> {{ sayHello() }} and here's link <a v-bind:href="link">link to Google</a></p>
+        <!-- enable raw html output -->
+        <p v-html="htmlLink"></p>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
@@ -21,7 +23,8 @@
             el: '#app',
             data: {
                 title: "This is a starter value",
-                link: "https://www.google.ru/"
+                link: "https://www.google.ru/",
+                htmlLink: "<a href='https://www.google.ru/'>link to Google</a></p>"
             },
             methods: {
                 changeTitle: function (e) {
