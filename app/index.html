@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .css-demo {
+            width: 100px;
+            height: 100px;
+            background: goldenrod;
+        }
+        .maroon{
+            background: maroon;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,6 +48,12 @@
             <p>Counter: {{counter}}</p>
             <p>Result: {{result}}</p>
         </div>
+        <p>Attach red = {{attachRed}}</p>
+        <div class="css-demo" 
+        @click="attachRed = !attachRed"
+        :class="{ maroon: attachRed }">
+
+        </div>
 
 
     </div>
@@ -46,6 +62,7 @@
         new Vue({
             el: '#app',
             data: {
+                attachRed: false,
                 bindMsg: 'Jack',
                 x: 0,
                 y: 0,
