@@ -53,9 +53,7 @@
         </div>
 
         <p>Attach maroon = {{attachRed}}</p>
-        <div class="css-demo" 
-        @click="attachRed = !attachRed"
-        :class="[divClass, inputClassName]">
+        <div class="css-demo" v-bind:style="styles">
         </div>
         <hr>
         <input type="text" v-model="inputClassName">
@@ -68,6 +66,7 @@
         new Vue({
             el: '#app',
             data: {
+                styles: "backgroundColor: yellow;",
                 inputClassName: 'noClasss',
                 attachRed: false,
                 bindMsg: 'Jack',
