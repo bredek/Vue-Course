@@ -51,7 +51,7 @@
         <p>Attach red = {{attachRed}}</p>
         <div class="css-demo" 
         @click="attachRed = !attachRed"
-        :class="{ maroon: attachRed }">
+        :class="divClass">
 
         </div>
 
@@ -74,6 +74,11 @@
             computed: {
                 result:function(){
                     return this.counter > 5 ? "Greater than 5" : "Less than 5";
+                },
+                divClass:function(){
+                    return{
+                        maroon: !this.attachRed
+                    }
                 }
             },
             watch: {
