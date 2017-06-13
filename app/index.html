@@ -12,8 +12,11 @@
             height: 100px;
             background: goldenrod;
         }
-        .maroon{
-            background: maroon;
+        .crimson{
+            background: crimson;
+        }
+        .wide{
+            width: 400px;
         }
     </style>
 </head>
@@ -48,12 +51,15 @@
             <p>Counter: {{counter}}</p>
             <p>Result: {{result}}</p>
         </div>
-        <p>Attach red = {{attachRed}}</p>
+
+        <p>Attach maroon = {{attachRed}}</p>
         <div class="css-demo" 
         @click="attachRed = !attachRed"
-        :class="divClass">
-
+        :class="[divClass, inputClassName]">
         </div>
+        <hr>
+        <input type="text" v-model="inputClassName">
+        <p>{{ inputClassName }}</p>
 
 
     </div>
@@ -62,6 +68,7 @@
         new Vue({
             el: '#app',
             data: {
+                inputClassName: 'noClasss',
                 attachRed: false,
                 bindMsg: 'Jack',
                 x: 0,
@@ -77,7 +84,7 @@
                 },
                 divClass:function(){
                     return{
-                        maroon: !this.attachRed
+                        crimson: !this.attachRed
                     }
                 }
             },
