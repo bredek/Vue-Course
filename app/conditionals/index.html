@@ -1,17 +1,63 @@
-
 <!-- Put this in the HTML section in JSFiddle! -->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
+
 	<p v-if="show">If you can see me!</p>
 	<template v-if="show">
 		<h1>Hello from template!</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis obcaecati neque perferendis! Quae illum architecto quod, eaque cumque nihil officiis.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis obcaecati neque perferendis! Quae illum architecto quod,
+			eaque cumque nihil officiis.</p>
 	</template>
 	<p v-else>Else you can see me!</p>
 	<p>Do you also see me?</p>
 	<p v-show="show">Hide me with v-show</p>
 	<button v-on:click="show = !show">Click me</button>
+	<!---->
+	<hr>
+	<div class="list">
+		<ul>
+			<li v-for="item in list" v-bind:key="item">{{ item }}</li>
+		</ul>
+		<button v-on:click="list.push('new item')">Add value</button>
+	</div>
+	<!---->
+	<hr>
+	<div class="list">
+		<ul>
+			<li v-for="(item, index) in list">{{ item }} - {{ index }}</li>
+		</ul>
+	</div>
+	<!---->
+	<hr>
+	<div class="list">
+		<template v-for="(item, index) in list">
+			<h1>{{ index }}</h1>
+			<p>{{ item }}</p>
+		</template>
+	</div>
+	<!---->
+	<hr>
+	<div class="list">
+		<ul>
+			<li v-for="(person, index) in people">
+				<div v-for="(item, key) in person">
+					<p>{{ key }} - {{ item }}</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!---->
+	<hr>
+	<div class="list">
+		<ul>
+			<li v-for="n in 10">
+				{{ n }}
+			</li>
+		</ul>
+	</div>
+</div>
+
 </div>
 
 <script src="app.js"></script>

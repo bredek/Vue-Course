@@ -3,6 +3,12 @@
 new Vue({
 	el: '#app',
 	data: {
-		show: true
+		show: true,
+		list: ['one', 'two', 'three'],
+		people: [
+			{name: 'Max', age: 27},
+			{name: 'Loh', age: 0},
+			{name: 'Pidr', age: 777}
+		]
 	}
 })
