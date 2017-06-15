@@ -19,11 +19,11 @@
         <p>{{ random() }}</p>
         <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
         <div>
-            <img v-bind:src="imageSrc" style="width:100px;height:100px">
+            <img :src="imageSrc" style="width:100px;height:100px">
         </div>
         <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
         <div>
-            <input type="text" v-bind:value="name">
+            <input type="text" :value="name">
         </div>
     </div>
 
