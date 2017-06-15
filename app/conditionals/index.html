@@ -1,0 +1,16 @@
+
+<!-- Put this in the HTML section in JSFiddle! -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+	<p v-if="show">If you can see me!</p>
+	<template v-if="show">
+		<h1>Hello from template!</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis obcaecati neque perferendis! Quae illum architecto quod, eaque cumque nihil officiis.</p>
+	</template>
+	<p v-else>Else you can see me!</p>
+	<p>Do you also see me?</p>
+	<button v-on:click="show = !show">Click me</button>
+</div>
+
+<script src="app.js"></script>
