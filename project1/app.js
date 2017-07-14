@@ -21,12 +21,20 @@ new Vue({
     },
     specialAttack: function () {
       // special attack
-      this.playerHealth -= this.randomDamage(10, 20);
-      this.monsterHealth -= this.randomDamage(3, 10);
+      this.monsterHealth -= this.randomDamage(10, 20);
+      this.playerHealth -= this.randomDamage(3, 10);
       this.checkWin();
     },
     heal: function () {
-
+      // special attack
+      var healSize = 10;
+      if(this.playerHealth <= 100 - healSize){
+        this.playerHealth += healSize;
+      } else {
+        this.playerHealth = 100;
+      }
+      this.playerHealth -= this.randomDamage(3, 10);
+      this.checkWin();
     },
     giveUp: function () {
 
