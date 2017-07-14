@@ -8,6 +8,12 @@ new Vue({
     }
   },
   methods: {
+    startGame: function(){
+      this.playerHealth = 100;
+      this.monsterHealth = 100;
+      this.gameIsRunning = true;
+      console.log('HIT!');
+    },
     attack: function () {
       var vm = this;
       function randomInteger(min, max) {

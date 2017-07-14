@@ -8,7 +8,6 @@
 </head>
 <body>
 <div id="app">
-    {{ test }}
     <section class="row">
         <div class="small-6 columns">
             <h1 class="text-center">YOU</h1>
@@ -36,7 +35,7 @@
     <!-- show this module if the games is NOT running  -->
     <section class="row controls" v-if="!gameIsRunning">
         <div class="small-12 columns">
-            <button id="start-game" v-on:click="{{ gameIsRunning = !gameIsRunning }}">START NEW GAME</button>
+            <button id="start-game" v-on:click="startGame">START NEW GAME</button>
         </div>
     </section>
      <!-- show this modules if the games is running  -->
