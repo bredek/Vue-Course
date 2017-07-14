@@ -20,7 +20,10 @@ new Vue({
       this.checkWin();
     },
     specialAttack: function () {
-
+      // special attack
+      this.playerHealth -= this.randomDamage(10, 20);
+      this.monsterHealth -= this.randomDamage(3, 10);
+      this.checkWin();
     },
     heal: function () {
 
