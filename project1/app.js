@@ -8,11 +8,10 @@ new Vue({
     }
   },
   methods: {
-    startGame: function(){
+    startGame: function () {
       this.playerHealth = 100;
       this.monsterHealth = 100;
       this.gameIsRunning = true;
-      console.log('HIT!');
     },
     attack: function () {
       var vm = this;
@@ -21,7 +20,26 @@ new Vue({
         rand = Math.floor(rand);
         return rand;
       }
-      vm.attackSize = randomInteger(1, 10);
-    }
+      // damage calc
+      var playerAttackSize = randomInteger(1, 10);
+      var monsterAttackSize = randomInteger(3, 10);
+      // attack
+      this.playerHealth -= monsterAttackSize;
+      this.monsterHealth -= playerAttackSize;
+
+      if(this.playerHealth <= 0 || this.monsterHealth <=0){
+        this.gameIsRunning = false;
+        alert("This is the end for you my friend!");
+      }
+    },
+    specialAttack: function () {
+
+    },
+    heal: function () {
+
+    },
+    giveUp: function () {
+
+    },
   }
 })
