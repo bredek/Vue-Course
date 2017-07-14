@@ -18,15 +18,17 @@ new Vue({
     attack: function () {
       // attack
       var monsterAttack = this.randomDamage(3, 10),
-          playerAttack = this.randomDamage(1, 10);
+        playerAttack = this.randomDamage(1, 10);
 
       this.playerHealth -= monsterAttack;
       this.monsterHealth -= playerAttack;
 
       this.battleLog.unshift({
+        isPlayer: true,
         text: "Player attacks with " + playerAttack
       })
       this.battleLog.unshift({
+        isPlayer: false,
         text: "Monster attacks with " + monsterAttack
       })
 
@@ -34,15 +36,17 @@ new Vue({
     },
     specialAttack: function () {
       var monsterAttack = this.randomDamage(3, 10),
-          playerAttack = this.randomDamage(10, 10);
+        playerAttack = this.randomDamage(10, 10);
       // special attack
       this.monsterHealth -= playerAttack;
       this.playerHealth -= monsterAttack;
 
       this.battleLog.unshift({
+        isPlayer: true,
         text: "Player attacks with " + playerAttack
       })
       this.battleLog.unshift({
+        isPlayer: false,
         text: "Monster attacks with " + monsterAttack
       })
       this.checkWin();
@@ -50,9 +54,9 @@ new Vue({
     heal: function () {
       // special attack
       var healSize = 10,
-          monsterAttack = this.randomDamage(3, 10);
+        monsterAttack = this.randomDamage(3, 10);
 
-      if(this.playerHealth <= 100 - healSize){
+      if (this.playerHealth <= 100 - healSize) {
         this.playerHealth += healSize;
       } else {
         this.playerHealth = 100;
@@ -60,9 +64,11 @@ new Vue({
       this.playerHealth -= monsterAttack;
 
       this.battleLog.unshift({
+        isPlayer: true,
         text: "Player heals " + healSize
       })
       this.battleLog.unshift({
+        isPlayer: false,
         text: "Monster attacks with " + monsterAttack
       })
       this.checkWin();

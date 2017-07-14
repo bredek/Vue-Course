@@ -51,8 +51,9 @@
     <section class="row log" v-if="battleLog.length > 0">
         <div class="small-12 columns">
             <ul>
-                <li v-for="item in battleLog">
-                    <p></p>
+                <li 
+                    v-for="item in battleLog" 
+                    v-bind:class="[item.isPlayer ? 'player-turn' : 'monster-turn']">
                     {{ item.text }}
                 </li>
             </ul>
