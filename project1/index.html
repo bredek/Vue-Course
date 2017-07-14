@@ -48,11 +48,12 @@
             <button id="give-up" v-on:click="giveUp">GIVE UP</button>
         </div>
     </section>
-    <section class="row log" v-if="gameIsRunning">
+    <section class="row log" v-if="battleLog.length > 0">
         <div class="small-12 columns">
             <ul>
-                <li>
-
+                <li v-for="item in battleLog">
+                    <p></p>
+                    {{ item.text }}
                 </li>
             </ul>
         </div>
