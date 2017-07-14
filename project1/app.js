@@ -4,8 +4,7 @@ new Vue({
     return {
       playerHealth: 100,
       monsterHealth: 100,
-      test: 'hello!',
-      attackSize: 0
+      gameIsRunning: false
     }
   },
   methods: {
