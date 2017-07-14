@@ -37,7 +37,7 @@ new Vue({
       this.checkWin();
     },
     giveUp: function () {
-
+      this.gameIsRunning = false;
     },
     randomDamage: function (min, max) {
       var rand = min + Math.random() * (max + 1 - min);
