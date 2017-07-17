@@ -5,7 +5,8 @@ new Vue({
       playerHealth: 100,
       monsterHealth: 100,
       gameIsRunning: false,
-      battleLog: []
+      battleLog: [],
+      audio: document.getElementById("audio")
     }
   },
   methods: {
@@ -31,6 +32,8 @@ new Vue({
         isPlayer: false,
         text: "Monster attacks with " + monsterAttack
       })
+
+      this.audio.play();
 
       this.checkWin();
     },

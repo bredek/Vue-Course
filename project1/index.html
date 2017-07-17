@@ -1,65 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Monster Slayer</title>
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="css/foundation.min.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
-<div id="app">
-    <h1 style="text-align: center; margin-top: 50px;">ТУПА DIABLO III <br>by Eugene Bredyuk</h1>
-    <section class="row">
-        <div class="small-6 columns">
-            <h1 class="text-center">YOU</h1>
-            <div class="healthbar">
-                <div 
-                    class="healthbar text-center" 
-                    style="background-color: green; margin: 0; color: white;"
-                    v-bind:style="{ width: playerHealth + '%' }">
-                    {{ playerHealth }}
+    <div id="app">
+        <audio id="audio" controls>
+            <source src="attack.wav" type="audio/wav"> Your browser does not support the audio element.
+        </audio>
+        <h1 style="text-align: center; margin-top: 50px;">ТУПА DIABLO III <br>by Eugene Bredyuk</h1>
+        <section class="row">
+            <div class="small-6 columns">
+                <h1 class="text-center">YOU</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" v-bind:style="{ width: playerHealth + '%' }">
+                        {{ playerHealth }}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="small-6 columns">
-            <h1 class="text-center">MONSTER</h1>
-            <div class="healthbar">
-                <div 
-                class="healthbar text-center" 
-                style="background-color: maroon; margin: 0; color: white;"
-                v-bind:style="{ width: monsterHealth + '%' }">
-                    {{ monsterHealth }}
+            <div class="small-6 columns">
+                <h1 class="text-center">MONSTER</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: maroon; margin: 0; color: white;" v-bind:style="{ width: monsterHealth + '%' }">
+                        {{ monsterHealth }}
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- show this module if the games is NOT running  -->
-    <section class="row controls" v-if="!gameIsRunning">
-        <div class="small-12 columns">
-            <button id="start-game" v-on:click="startGame">START NEW GAME</button>
-        </div>
-    </section>
-     <!-- show this modules if the games is running  -->
-    <section class="row controls" v-if="gameIsRunning">
-        <div class="small-12 columns">
-            <button id="attack" v-on:click="attack">ATTACK</button>
-            <button id="special-attack"  v-on:click="specialAttack">SPECIAL ATTACK</button>
-            <button id="heal" v-on:click="heal">HEAL</button>
-            <button id="give-up" v-on:click="giveUp">GIVE UP</button>
-        </div>
-    </section>
-    <section class="row log" v-if="battleLog.length > 0">
-        <div class="small-12 columns">
-            <ul>
-                <li 
-                    v-for="item in battleLog" 
-                    v-bind:class="[item.isPlayer ? 'player-turn' : 'monster-turn']">
-                    {{ item.text }}
-                </li>
-            </ul>
-        </div>
-    </section>
-</div>
-<script src="app.js"></script>
+        </section>
+        <!-- show this module if the games is NOT running  -->
+        <section class="row controls" v-if="!gameIsRunning">
+            <div class="small-12 columns">
+                <button id="start-game" v-on:click="startGame">START NEW GAME</button>
+            </div>
+        </section>
+        <!-- show this modules if the games is running  -->
+        <section class="row controls" v-if="gameIsRunning">
+            <div class="small-12 columns">
+                <button id="attack" v-on:click="attack">ATTACK</button>
+                <button id="special-attack" v-on:click="specialAttack">SPECIAL ATTACK</button>
+                <button id="heal" v-on:click="heal">HEAL</button>
+                <button id="give-up" v-on:click="giveUp">GIVE UP</button>
+            </div>
+        </section>
+        <section class="row log" v-if="battleLog.length > 0">
+            <div class="small-12 columns">
+                <ul>
+                    <li v-for="item in battleLog" v-bind:class="[item.isPlayer ? 'player-turn' : 'monster-turn']">
+                        {{ item.text }}
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
