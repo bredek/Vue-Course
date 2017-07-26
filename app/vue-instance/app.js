@@ -8,6 +8,8 @@ var vm1 = new Vue({
     show: function () {
       this.showParagraph = true;
       this.updateTitle('The VueJS Instance (Updated)');
+      console.log(this.$refs);
+      this.$refs.myButton.innerText = 'Test!';
     },
     updateTitle: function (title) {
       this.title = title;
@@ -31,6 +33,7 @@ setTimeout(function(){
 
 console.log(vm1);
 console.log(vm1.$data);
+vm1.$refs.heading.innerText = 'Changing heading via refs';
 
 
 var vm2 = new Vue({
