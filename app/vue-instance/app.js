@@ -29,6 +29,9 @@ setTimeout(function(){
   vm1.title = 'Timer triggered!';
 }, 1000);
 
+console.log(vm1);
+console.log(vm1.$data);
+
 
 var vm2 = new Vue({
   el: '#app2',
