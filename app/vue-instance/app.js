@@ -1,5 +1,5 @@
 var vm1 = new Vue({
-  el: '#app',
+  // el: '#app',
   data: {
     title: 'The VueJS Instance',
     showParagraph: false
@@ -31,6 +31,8 @@ setTimeout(function(){
   vm1.title = 'Timer triggered!';
 }, 1000);
 
+// manual mounting
+vm1.$mount("#app");
 console.log(vm1);
 console.log(vm1.$data);
 vm1.$refs.heading.innerText = 'Changing heading via refs';
@@ -47,3 +49,10 @@ var vm2 = new Vue({
     }
   }
 });
+
+
+var vm3 = new Vue({
+  template: '<h1>Hello from template</h1>'
+});
+
+vm3.$mount('#app3');
