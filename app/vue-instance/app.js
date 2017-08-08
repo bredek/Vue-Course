@@ -27,7 +27,13 @@ var vm1 = new Vue({
   }
 });
 
-setTimeout(function(){
+
+Vue.component('my-component', {
+  template: '<div>My first component</div>'
+})
+
+
+setTimeout(function () {
   vm1.title = 'Timer triggered!';
 }, 1000);
 
@@ -44,15 +50,15 @@ var vm2 = new Vue({
     title: 'Another instance'
   },
   methods: {
-    someAction: function(){
+    someAction: function () {
       vm1.title = 'Something is changed!';
     }
   }
 });
 
 
-var vm3 = new Vue({
-  template: '<h1>Hello from template</h1>'
-});
+// var vm3 = new Vue({
+//   template: '<h1>Hello from template</h1>'
+// });
 
-vm3.$mount('#app3');
+// vm3.$mount('#app3');
