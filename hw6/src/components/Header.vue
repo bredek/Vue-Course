@@ -15,3 +15,12 @@
         }
     } 
 </script> 
+
+<style lang="sass" scoped>
+    header{
+        h1{
+            color: red;
+        }
+    }
+</style> 
+
