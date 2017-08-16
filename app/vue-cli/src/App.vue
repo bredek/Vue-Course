@@ -1,12 +1,13 @@
 <template>
-    <h1>Hello world!</h1>
+  <app-server-status>
+  </app-server-status>
 </template>
 
 
 <script>
-export default {}
+
 </script>
 
 <style lang="scss">
-
+  
 </style>
