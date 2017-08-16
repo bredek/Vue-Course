@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Monster Slayer</title>
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="css/foundation.min.css">
@@ -16,7 +17,7 @@
         <h1 style="text-align: center; margin-top: 50px;">ТУПА DIABLO III <br>by Eugene Bredyuk</h1>
         <section class="row">
             <div class="small-6 columns">
-                <h1 class="text-center">YOU</h1>
+                <h1 class="text-center">ТУПА Я</h1>
                 <div class="healthbar">
                     <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" v-bind:style="{ width: playerHealth + '%' }">
                         {{ playerHealth }}
@@ -24,7 +25,7 @@
                 </div>
             </div>
             <div class="small-6 columns">
-                <h1 class="text-center">MONSTER</h1>
+                <h1 class="text-center">ТУПА МОНСТР</h1>
                 <div class="healthbar">
                     <div class="healthbar text-center" style="background-color: maroon; margin: 0; color: white;" v-bind:style="{ width: monsterHealth + '%' }">
                         {{ monsterHealth }}
@@ -35,16 +36,16 @@
         <!-- show this module if the games is NOT running  -->
         <section class="row controls" v-if="!gameIsRunning">
             <div class="small-12 columns">
-                <button id="start-game" v-on:click="startGame">START NEW GAME</button>
+                <button id="start-game" v-on:click="startGame">СТАРТУЕМ!</button>
             </div>
         </section>
         <!-- show this modules if the games is running  -->
         <section class="row controls" v-if="gameIsRunning">
             <div class="small-12 columns">
-                <button id="attack" v-on:click="attack">ATTACK</button>
-                <button id="special-attack" v-on:click="specialAttack">SPECIAL ATTACK</button>
-                <button id="heal" v-on:click="heal">HEAL</button>
-                <button id="give-up" v-on:click="giveUp">GIVE UP</button>
+                <button id="attack" v-on:click="attack">ПРОПИСАТЬ ПО ЩАМ</button>
+                <button id="special-attack" v-on:click="specialAttack">ВЕРТУХА</button>
+                <button id="heal" v-on:click="heal">ПОДЛЕЧИТЬСЯ</button>
+                <button id="give-up" v-on:click="giveUp">ТУПА НАДОЕЛО</button>
             </div>
         </section>
         <section class="row log" v-if="battleLog.length > 0">
